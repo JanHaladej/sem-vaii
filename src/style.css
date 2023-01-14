@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Navbar */
+
+.full--navbar{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00b7e5;
+    padding: 30px;
+    height: 30px;
+}
+
+.nav--logo{
+    max-width: 70px;
+}
+
+.ul{
+    display: flex;
+}
+
+.ul > li{
+    list-style: none;
+    padding: 10px;
+}
+
+.ul > li >a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+/* Footer */
+
+.full--footer{
+    background-color: #00b7e5;
+    padding: 30px;
+    height: 10px;
+}
+
+.footer--ul{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer--ul > li{
+    list-style: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+/* Slider/Banner */
+.Banner {
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+}
+
+.mainImg {
+    width: 100%;
+}
+
+.actions {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+/* Home and others*/
+
+.box {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+}
+
+
+.boxImg {
+    float: left;
+    object-fit: contain;
+    width: 500px;
+    padding: 25px 25px 25px 25px ;
+}
+
+
+.boxText {
+    text-align: justify;
+}
+
+/* Sluzby */
+
+.uvod--nadpis {
+    text-align: center;
+}
+                
+.uvod--sluzby {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.uvod--text {
+    font-weight: bold;
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CRUD test */
+
+.dot {
+    text-align: center;
+}
+
+.form  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form input{
+    width: 300px;
+    height: 60px;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.oneUser {
+    text-align: center;
+    width: 300px;
+    height: 110px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+#updateInput {
+    width: 100px;
+    height: 30px;
+}
+
+
+
+/*
+.slider {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(50%);
+  transition: all 1s ease-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.current {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+    position: absolute;
+    top: 0rem;
+    left: 5rem;
+    opacity: 0;
+    width: 40%;
+    color: #fff;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    animation: slide-up 1.5s ease 1s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+@keyframes slide-up {
+  0% {
+    visibility: visible;
+    top: 23rem;
+  }
+  100% {
+    visibility: visible;
+    top: 17rem;
+  }
+}
+
+.current .content {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease;
+}
+
+.arrow {
+    border: 2px solid white;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+}
+.arrow:hover {
+    background-color: #fff;
+    color: #777;
+}
+
+.next {
+  right: 3%;
+}
+.prev {
+  left: 3%;
+}
+
+hr {
+  height: 2px;
+  background: white;
+  width: 80%;
+}
+*/
+
+
+/*
+body {
+    background-image: url(./images/backgroundLogo.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+main {
+    padding: 50px 50px;
+}
+
+.main--title {
+    margin: 0;
+    font-size: 39px;
+    letter-spacing: -0.05em;
+}
+
+.main--facts {
+    margin-top: 46px;
+    max-width: 400px;
+}
+
+.main--list > li {
+    line-height: 19px;
+    padding-block: 10px;
+}
+/* ^^ main ^^ */
+
+.contacts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.contact-card {
+    margin-top: 30px;
+    flex-basis: 250px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: white;
+}
+
+.contact-card > img {
+    width: 100%;
+    height: auto;
+    align-self: center;
+    object-fit: cover;
+}
+
+.contact-card > h3 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.info-group {
+    display: flex;
+    align-items: center;
+}
+
+.info-group > img {
+    height: 15px;
+    margin-right: 5px;
+}
+
+.info-group > p {
+    margin-block: 5px;
+    font-size: 12px;
+    color: black;
+}
+
+/* ^^^ str2 karticky ^^^ */
+
+/*
+.formular{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+input[type="text"], input[type="email"] {
+    margin-bottom: 15px;
+    margin-right: 10px;
+    height: 30px;
+    text-indent: 5px;
+    border: 2px solid #777;
+    border-radius: 10px;
+}
+*/
+/*
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 5px;
+}
+
+textarea {
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    display: block;
+    
+}
+
+/* ^^^ str3 form test ^^^*/
