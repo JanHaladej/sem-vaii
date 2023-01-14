@@ -30,7 +30,7 @@
     text-decoration: none;
     color: white;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 /* Footer */
@@ -89,50 +89,126 @@
     outline: 0 !important;
 }
 
-/* Home and others*/
+/* Sluzby, vzdelavanie, clanky */
+
+.full--sluzby, .full--vzdelavanie, .full--clanky {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 50px;
+}
 
 .box {
     display: flex;
-    width: 90%;
-    margin-left: 5%;
 }
 
-
-.boxImg {
+.boxImg--right {
     float: left;
     object-fit: contain;
     width: 500px;
-    padding: 25px 25px 25px 25px ;
+    padding: 0px 0px 35px 35px ;
 }
 
+.boxImg--left {
+    float: left;
+    object-fit: contain;
+    width: 500px;
+    padding: 0px 35px 35px 0px ;
+}
 
 .boxText {
     text-align: justify;
 }
 
-/* Sluzby */
+.boxText > p{
+    text-indent: 20px;
+}
+                
+.uvod {
+    width: 90%;
+    margin: auto;
+}
 
 .uvod--nadpis {
     text-align: center;
-}
-                
-.uvod--sluzby {
-    width: 80%;
-    margin-left: 10%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #003366;
+    font-size: 25px;
 }
 
 .uvod--text {
     font-weight: bold;
     text-align: justify;
+    padding-bottom: 50px;
+    font-size: 20px;
 }
 
+.horizontalLine {
+    height: 3px;
+    color: #003366;
+    background-color: #003366;
+    width: 100%;
+}
 
+.hr--podNadpisom {
+    height: 7px;
+    color: #c06;
+    background-color: #c06;
+    width: 20%;
+    margin-bottom: 10px;
+}
 
+/* kariera */
 
+.full--kariera {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 
+.form-container--login {
+    display: flex;
+    align-items: center;
+}
 
+.form-container--reg {
+    display: flex;
+    align-items: center;
+}
 
+.form {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 10px -1px rgba(0, 20, 40);
+}
 
+.form--input {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+.form--submit {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #00b7e5;
+    border: none;   
+    cursor: pointer; 
+}
+
+.form--submit:hover {
+    background-color: #003366;
+}
 
 
 
