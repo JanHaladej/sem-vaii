@@ -1,7 +1,13 @@
 import React from "react"
 
 import img1 from "../images/SluzbyImgs/Sluzby1.jpg"
-import img2 from "../images/SluzbyImgs/Sluzby2.webp"
+import img2 from "../images/SluzbyImgs/Sluzby2.jpg"
+import img3 from "../images/SluzbyImgs/Sluzby3.jpg"
+import img4 from "../images/SluzbyImgs/Sluzby4.jpg"
+import img5 from "../images/SluzbyImgs/Sluzby5.webp"
+import img6 from "../images/SluzbyImgs/Sluzby6.jpg"
+import img7 from "../images/SluzbyImgs/Sluzby7.jpg"
+import img8 from "../images/SluzbyImgs/Sluzby8.jpg"
 
 export default function Sluzby(){
     return (
@@ -26,7 +32,7 @@ export default function Sluzby(){
             </div>
                 
             <div className="box">
-                <img src={img1} alt="" className="boxImg--left"/>
+                <img src={img2} alt="" className="boxImg--left"/>
                 <div className="boxText">
                     <h1>Druhé a ďalšie bývanie</h1>
                     <hr className="hr--podNadpisom" />
@@ -52,11 +58,11 @@ export default function Sluzby(){
                         <hr className="hr--podNadpisom" />
                         <p>Vo všeobecnosti platí, že človek môže ísť do dôchodku, keď na to má dostatočnú finančnú rezervu prípadne iné aktíva. Byť 40-ročný rentier v dnešnej dobe, nie je nič nereálne, a pritom nemusí ísť o dcéru/syna z bohatej rodiny alebo niekoho, kto nadobudol majetok nelegálnym spôsobom. Taký je žiaľ všeobecný názor. Správnymi rozhodnutiami sa dá majetok vybudovať legálne a aj bez nutnosti veľkých finančných investícií.</p>
                     </div>
-                <img src={img1} alt="" className="boxImg--right"/>
+                <img src={img3} alt="" className="boxImg--right"/>
             </div>
 
             <div className="box">
-                <img src={img1} alt="" className="boxImg--left"/>
+                <img src={img4} alt="" className="boxImg--left"/>
                 <div className="boxText">
                     <h1>Spotrebiteľský šok</h1>
                     <hr className="hr--podNadpisom" />
@@ -82,11 +88,11 @@ export default function Sluzby(){
                         <hr className="hr--podNadpisom" />
                         <p>Snáď jednou z najťažších skúšok je podlomené zdravie. V tom období peniaze nie sú prioritou. Ich nedostatok však so sebou prináša problémy v ďalších oblastiach života. Veď viete si predstaviť pokles príjmu do domácnosti z mesiaca na mesiac o 50-100%? Na druhej strane dostatok peňazí je predpokladom rýchlejšej a kvalitnejšej liečby. Akým spôsobom ste zabezpečení pre tieto prípady? Najefektívnejšou formou je kvalitné poistné krytie. Ak ho už využívate, dôležité sú správne nastavené parametre. V prípade záujmu Vám s tým rád pomôžem.</p>
                     </div>
-                <img src={img1} alt="" className="boxImg--right"/>
+                <img src={img5} alt="" className="boxImg--right"/>
             </div>
                 
             <div className="box">
-                <img src={img1} alt="" className="boxImg--left"/>
+                <img src={img6} alt="" className="boxImg--left"/>
                 <div className="boxText">
                     <h1>Zabezpečenie majetku</h1>
                     <hr className="hr--podNadpisom" />
@@ -111,11 +117,11 @@ export default function Sluzby(){
                         <hr className="hr--podNadpisom" />
                         <p>Koľko to stojí a kde na to vziať? Napriek tomu, že v každom z prípadov ide o nemalý obnos peňazí, pravidelným a disciplinovaným odkladaním aj zanedbateľnej čiastky z výplaty vie každý z nás vytvoriť potrebnú sumu ako rezervu pre deti. Okrem pravidelnosti a disciplíny je dôležitý výber správneho nástroja na finančnom trhu a optimálne nastaviť jeho parametre. Ak hľadáte riešenie, rád Vám pomôžem.</p>
                     </div>
-                <img src={img1} alt="" className="boxImg--right"/>
+                <img src={img7} alt="" className="boxImg--right"/>
             </div>
                 
             <div className="box">
-                <img src={img1} alt="" className="boxImg--left"/>
+                <img src={img8} alt="" className="boxImg--left"/>
                 <div className="boxText">
                     <h1>Deti</h1>
                     <hr className="hr--podNadpisom" />

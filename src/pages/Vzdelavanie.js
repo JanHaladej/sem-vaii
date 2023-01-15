@@ -12,7 +12,7 @@ export default function Vzdelavanie(){
                     <h1>WORKSHOPY</h1>
                 </div>
                 <div className="uvod--text">
-                    <p>TO DO long text</p>
+                    <p>Ako skupina usporiadávame workshopy, kde si človek vyskúša svoju finančnú gramotnosť. Môžete nahliadnuť do toho, ako funguje finančný trh, aké nástrahy v ňom existujú a pokiaľ sa budete riadiť zásadami, akými sa riadite aj v realite, dokážete dokonca aj predpovedať svoju vlastnú budúcnosť.</p>
                 </div>
             </div>
             

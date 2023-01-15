@@ -33,6 +33,10 @@
     font-size: 30px;
 }
 
+.ul > li >a:hover{
+    color: #003366;
+}
+
 /* Footer */
 
 .full--footer{
@@ -56,45 +60,142 @@
 }
 
 /* Slider/Banner */
-.Banner {
-    display: flex;
-    transition: all 0.5s ease;
-}
 
-.slideshow {
-  position: relative;
-  width: 100%;
-}
+:root {
+    --heights: 50vh;
+    --widths: 100%;
+  }
 
-.mainImg {
+.slider-container {
+    height: var(--heights);
+    width: var(--widths);
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .active {
+    display: inline-block;
+  }
+  
+  .inactive {
+    display: none;
+  }
+  
+  .slides {
+    height: var(--heights);
+    width: var(--widths);
+    position: relative;
+  }
+  
+  .slide-image {
     width: 100%;
-}
-
-.actions {
-  position: absolute;
-  top: 45%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.actions button {
-    background: none;
-    border: none;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: top;
+  }
+  
+  .slide-title,
+  .slide-text {
+    width: 100%;
+    height: 100%;
+    color: #c06;
+    font-size: 125px;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    z-index: 10;
+  }
+  
+  .slide-text {
+    top: 60%;
+    font-size: 50px;
+  }
+  
+  .prev,
+  .next {
+    /*color: transparent;*/
     cursor: pointer;
-    padding: 20px;
-}
-
-*:focus {
-    outline: 0 !important;
-}
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1rem;
+    margin-top: -3rem;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 0px 5px 5px 0px;
+  }
+  
+  .slider-container:hover .prev,.slider-container:hover .next {
+    color: black
+  }
+  
+  .slider-container:hover .prev:hover,
+  .slider-container:hover .next:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.5s ease-in;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 5px 0px 0px 5px;
+  }
+  
+  .all-dots {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    top: 85%;
+    justify-content: center;
+    z-index: 200;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0px 3px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .slider-container:hover .dot:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .slider-container:hover .dot{
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .slider-container:hover .active-dot{
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .play-pause {
+    color: black;
+  }
 
 /* Sluzby, vzdelavanie, clanky */
 
-.full--sluzby, .full--vzdelavanie, .full--clanky {
+@keyframes contentOpacity {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.full--sluzby, .full--vzdelavanie, .full--clanky, .HomeContent {
     max-width: 1200px;
     margin: auto;
     margin-bottom: 50px;
+    animation-name: contentOpacity;
+    animation-duration: 1s;
+}
+
+.HomeContent{
+    margin-top: 50px;
 }
 
 .box {
@@ -165,6 +266,8 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    animation-name: contentOpacity;
+    animation-duration: 1s;
 }
 
 .form-container--login {
