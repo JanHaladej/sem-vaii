@@ -23,7 +23,7 @@ export default function Login(){
     
     return (
         <div className="form-container--login">
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form--base" onSubmit={handleSubmit}>
                 <h3>Prihlásenie</h3>
                 <input 
                     type="MAcislo" 

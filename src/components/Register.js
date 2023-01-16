@@ -31,7 +31,7 @@ export default function Register(){
     
     return (
         <div className="form-container--reg">
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form--base" onSubmit={handleSubmit}>
             <h3>Registrácia</h3>
                 <input 
                     type="MAcislo" 
