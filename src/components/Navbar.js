@@ -21,7 +21,7 @@ export default function Navbar(){
                         <Link to="/Dotaznik">Dotazník</Link>
                     </li>
                     <li>
-                        <Link to="/Kalkulacky">Kalkulačky</Link>
+                        <Link to="/Referencie">Referencie</Link>
                     </li>
                     <li>
                         <Link to="/Clanky">Články</Link>

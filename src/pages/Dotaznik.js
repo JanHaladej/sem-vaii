@@ -1,4 +1,5 @@
 import React from "react"
+import Axios from "axios"
 
 export default function Form() {
     const [formDataDot, setFormDataDot] = React.useState(
@@ -33,8 +34,8 @@ export default function Form() {
 
     function handleSubmit(event) {
         event.preventDefault()
-        // submitToApi(formData)
-        console.log(formDataDot)
+        Axios.post("http://localhost:3001/api/insert/dot", {formDataDot})
+        
     }
     
     return (

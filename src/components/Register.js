@@ -1,4 +1,5 @@
 import React from "react"
+import Axios from "axios"
 
 export default function Register(){
     const [formDataReg, setFormDataReg] = React.useState({
@@ -27,6 +28,8 @@ export default function Register(){
         console.log(formDataReg.email)
         console.log(formDataReg.passwordConfirm)
         console.log(formDataReg.position)*/
+
+        Axios.post("http://localhost:3001/api/insert/reg", {formDataReg})
     }
     
     return (

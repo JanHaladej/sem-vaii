@@ -1,10 +1,8 @@
 import React from "react"
 
-
-export default function Clanky(){
+export default function Referencie(){
     const [formDataRef, setFormDataRef] = React.useState({
-        nazov: "",
-        obrazok: "",
+        meno: "",
         comment: ""
     })
     
@@ -25,26 +23,18 @@ export default function Clanky(){
     return (
         <div className="form-container--referencia">
             <form className="form--base" onSubmit={handleSubmit}>
-                <h3>Uverejni článok</h3>
+                <h3>Hodnotenie a skúsenosť</h3>
                 <input 
-                    type="nazov" 
-                    placeholder="názov"
+                    type="meno" 
+                    placeholder="meno a priezvisko"
                     className="form--input"
-                    name="nazov"
+                    name="meno"
                     onChange={handleChange}
-                    value={formDataRef.nazov}
-                />
-                <input 
-                    type="obrazok" 
-                    placeholder="obrázok link"
-                    className="form--input"
-                    name="obrazok"
-                    onChange={handleChange}
-                    value={formDataRef.obrazok}
+                    value={formDataRef.meno}
                 />
                 <textarea className="text-area--referencie"
                     value={formDataRef.comment}
-                    placeholder="Text"
+                    placeholder="Hodnotenie"
                     onChange={handleChange}
                     name="comment"
                 />

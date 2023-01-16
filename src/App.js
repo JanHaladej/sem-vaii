@@ -7,7 +7,7 @@ import Home from "./pages/Home"
 import Sluzby from "./pages/Sluzby"
 import Vzdelavanie from "./pages/Vzdelavanie"
 import Dotaznik from "./pages/Dotaznik"
-import Kalkulacky from "./pages/Kalkulacky"
+import Referencie from "./pages/Referencie"
 import Clanky from "./pages/Clanky"
 import Kariera from "./pages/Kariera"
 
@@ -23,7 +23,7 @@ export default function App() {
                 <Route path='/Sluzby' element={<Sluzby/>} />
                 <Route path='/Vzdelavanie' element={<Vzdelavanie/>} />
                 <Route path='/Dotaznik' element={<Dotaznik/>} />
-                <Route path='/Kalkulacky' element={<Kalkulacky/>} />
+                <Route path='/Referencie' element={<Referencie/>} />
                 <Route path='/Clanky' element={<Clanky/>} />
                 <Route path='/Kariera' element={<Kariera/>} />
             </Routes>
