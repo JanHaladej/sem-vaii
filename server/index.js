@@ -50,6 +50,37 @@ app.post("/api/insert/reg", (req, res)=> {
 
 })
 
+//zapisovanie do databazy referencie
+app.post("/api/insert/ref", (req, res)=> {
+
+    const meno = req.body.formDataRef.meno
+    const comment = req.body.formDataRef.comment
+    console.log(meno)
+    
+    const sqlInsert = "INSERT INTO referencie (menoPriezvisko, hodnotenie) VALUES (?,?)"
+    db.query(sqlInsert, [meno, comment], (err, result)=> {
+    console.log(result)
+    })
+
+
+})
+
+//zapisovanie do databazy clanky
+app.post("/api/insert/cla", (req, res)=> {
+
+    const nazov = req.body.formDataRef.nazov
+    const obrazok = req.body.formDataRef.obrazok
+    const comment = req.body.formDataRef.comment
+    console.log(nazov)
+
+    const sqlInsert = "INSERT INTO clanky (nazov, text, obrazky) VALUES (?,?,?)"
+    db.query(sqlInsert, [nazov, comment, obrazok], (err, result)=> {
+    console.log(result)
+    })
+
+
+})
+
 //zapisovanie do databazy dotaznik
 app.post("/api/insert/dot", (req, res)=> {
 

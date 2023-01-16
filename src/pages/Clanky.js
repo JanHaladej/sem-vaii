@@ -1,5 +1,5 @@
 import React from "react"
-
+import Axios from "axios"
 
 export default function Clanky(){
     const [formDataRef, setFormDataRef] = React.useState({
@@ -20,6 +20,7 @@ export default function Clanky(){
     function handleSubmit(event) {
         event.preventDefault()
         /*sem podmienky ak nejake budem mat napr @ */
+        Axios.post("http://localhost:3001/api/insert/cla", {formDataRef})
     }
     
     return (
