@@ -8,11 +8,11 @@ export default function Referencie(){
     })
 
     const [userList, setUserList] = React.useState ([])
+    const [updateHodn, setUpdateHodn] = React.useState("")
 
     React.useEffect(() => {
         Axios.get("http://localhost:3001/api/get/ref").then((response) => {
             setUserList(response.data)
-            console.log(response.data)
         })
     }, [userList])
     
@@ -31,7 +31,19 @@ export default function Referencie(){
         Axios.post("http://localhost:3001/api/insert/ref", {formDataRef})
         setUserList([...userList, {meno: formDataRef.meno, comment: formDataRef.comment}])
     }
+/*
+    const deleteUser = (var1, var2) => {
+        Axios.delete("http://localhost:3001/api/delete/ref", {meno: var1, hodnotenie: var2})
+    }
+*/
+    const deleteUser = (premenna) => {
+        Axios.delete(`http://localhost:3001/api/delete/ref/${premenna}`)
+    }
     
+    const updateUser = (premenna) => {
+        Axios.put("http://localhost:3001/api/update/ref", {nick: premenna, hodnotenie: updateHodn})
+    }
+
     return (
         
         <div className="form-container--referencia">
@@ -57,13 +69,18 @@ export default function Referencie(){
 
         {userList.map((val) => {
             return (
-                <div className="oneUser">
+                <div className="one-result">
+                <div className="form--base">
                     <h1>{val.menoPriezvisko}</h1>
-                    <p>{val.hodnotenie}</p>
-
-                    <button /*onClick={() => {deleteUser(val.nick)}}*/>Delete</button>
-                    <input type="text" id="updateInput" /*onChange={(e) => {setUpdateUserEmail(e.target.value)}}*//>
-                    <button /*onClick={() => {updateUser(val.nick)}}</div>*/>Update</button>
+                    <br/>
+                    <textarea className="text-area--referencie"
+                        defaultValue={val.hodnotenie}
+                        onChange={(e) => {setUpdateHodn(e.target.value)}}
+                    />
+                    <button onClick={() => {updateUser(val.menoPriezvisko)}} className="form--submit">Update</button>
+                    <br/>{/*TO DO zmena textoveho pola */}
+                    <button onClick={() => {deleteUser(val.menoPriezvisko)}} className="form--submit">Delete</button>
+                </div>
                 </div>
             )
         })}

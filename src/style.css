@@ -405,6 +405,15 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 
+.one-result {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.cla--img{
+    width: 50%;
+}
+
 
 /* CRUD test */
 /*

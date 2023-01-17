@@ -25,6 +25,15 @@ app.get("/api/get/ref", (req, res) => {
 
 })
 
+app.get("/api/get/cla", (req, res) => {
+    const sqlSelect = "SELECT * FROM clanky"
+
+    db.query(sqlSelect, (err, result)=> {
+        res.send(result)
+    })
+
+})
+
 //zapisovanie do databazy user_list
 app.post("/api/insert/reg", (req, res)=> {
 
@@ -105,24 +114,73 @@ app.post("/api/insert/dot", (req, res)=> {
 })
 
 //delete
-app.delete("/api/delete/:nick", (req, res)=> {
+/*
+app.delete("/api/delete/ref", (req, res)=> {
+
+    const meno = req.body.meno
+    console.log(req.body.meno)
+
+    const sqlDelete = "DELETE FROM referencie WHERE menoPriezvisko = ?"
+    db.query(sqlDelete, meno, (err, result)=> {
+        if (err) console.log(err)
+    })
+})
+*/
+
+//delete
+app.delete("/api/delete/ref/:nick", (req, res)=> {
 
     const nick = req.params.nick
 
-    const sqlDelete = "DELETE FROM crud_table WHERE nick = ?"
+    const sqlDelete = "DELETE FROM referencie WHERE menoPriezvisko = ?"
     db.query(sqlDelete, nick, (err, result)=> {
         if (err) console.log(err)
     })
 })
 
+app.delete("/api/delete/cla/:nick", (req, res)=> {
+
+    const nick = req.params.nick
+
+    const sqlDelete = "DELETE FROM clanky WHERE nazov = ?"
+    db.query(sqlDelete, nick, (err, result)=> {
+        if (err) console.log(err)
+    })
+})
+
+
 //update
+/*
 app.put("/api/update", (req, res)=> {
 
-    const nick = req.body.nick
-    const email = req.body.email
+    const nick = req.body.meno
+    console.log(nick)
+    const email = req.body.hodnotenie
 
-    const sqlUpdate = "UPDATE crud_table SET email = ? WHERE nick = ?"
+    const sqlUpdate = "UPDATE referencie SET hodnotenie = ? WHERE menoPriezvisko = ?"
     db.query(sqlUpdate, [email, nick], (err, result)=> {
+        if (err) console.log(err)
+    })
+})
+*/
+app.put("/api/update/ref", (req, res)=> {
+
+    const meno = req.body.nick
+    const hodn = req.body.hodnotenie
+
+    const sqlUpdate = "UPDATE referencie SET hodnotenie = ? WHERE menoPriezvisko = ?"
+    db.query(sqlUpdate, [hodn, meno], (err, result)=> {
+        if (err) console.log(err)
+    })
+})
+
+app.put("/api/update/cla", (req, res)=> {
+
+    const meno = req.body.nick
+    const hodn = req.body.hodnotenie
+
+    const sqlUpdate = "UPDATE clanky SET obrazky = ? WHERE nazov = ?"
+    db.query(sqlUpdate, [hodn, meno], (err, result)=> {
         if (err) console.log(err)
     })
 })
