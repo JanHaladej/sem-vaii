@@ -16,8 +16,8 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 //zobraz celu databazu
-app.get("/api/get", (req, res) => {
-    const sqlSelect = "SELECT * FROM crud_table"
+app.get("/api/get/ref", (req, res) => {
+    const sqlSelect = "SELECT * FROM referencie"
 
     db.query(sqlSelect, (err, result)=> {
         res.send(result)
@@ -32,7 +32,6 @@ app.post("/api/insert/reg", (req, res)=> {
     const email = req.body.formDataReg.email
     const heslo = req.body.formDataReg.password
     const pozicia = req.body.formDataReg.position
-    console.log(MA)
 
     var variable
     // je tam uz niekto s takym nickom ?
@@ -55,7 +54,6 @@ app.post("/api/insert/ref", (req, res)=> {
 
     const meno = req.body.formDataRef.meno
     const comment = req.body.formDataRef.comment
-    console.log(meno)
     
     const sqlInsert = "INSERT INTO referencie (menoPriezvisko, hodnotenie) VALUES (?,?)"
     db.query(sqlInsert, [meno, comment], (err, result)=> {
@@ -71,7 +69,6 @@ app.post("/api/insert/cla", (req, res)=> {
     const nazov = req.body.formDataRef.nazov
     const obrazok = req.body.formDataRef.obrazok
     const comment = req.body.formDataRef.comment
-    console.log(nazov)
 
     const sqlInsert = "INSERT INTO clanky (nazov, text, obrazky) VALUES (?,?,?)"
     db.query(sqlInsert, [nazov, comment, obrazok], (err, result)=> {
@@ -99,10 +96,6 @@ app.post("/api/insert/dot", (req, res)=> {
     const priezvisko = req.body.formDataDot.priezvisko
     const email = req.body.formDataDot.email
     const telCislo = req.body.formDataDot.telCislo
-
-    console.log(q1)
-
-    var variable
     
         const sqlInsert = "INSERT INTO dotaznik (o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, meno, priezvisko, email, telCislo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
         db.query(sqlInsert, [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, meno, priezvisko, email, telCislo], (err, result)=> {

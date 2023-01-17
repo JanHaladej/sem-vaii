@@ -6,6 +6,15 @@ export default function Referencie(){
         meno: "",
         comment: ""
     })
+
+    const [userList, setUserList] = React.useState ([])
+
+    React.useEffect(() => {
+        Axios.get("http://localhost:3001/api/get/ref").then((response) => {
+            setUserList(response.data)
+            console.log(response.data)
+        })
+    }, [])
     
     function handleChange(event) {
         setFormDataRef(prevFormDataRef => {
@@ -20,9 +29,11 @@ export default function Referencie(){
         event.preventDefault()
         /*sem podmienky ak nejake budem mat napr @ */
         Axios.post("http://localhost:3001/api/insert/ref", {formDataRef})
+        setUserList([...userList, {meno: formDataRef.meno, comment: formDataRef.comment}])
     }
     
     return (
+        <div>
         <div className="form-container--referencia">
             <form className="form--base" onSubmit={handleSubmit}>
                 <h3>Hodnotenie a skúsenosť</h3>
@@ -42,6 +53,20 @@ export default function Referencie(){
                 />
                 <button className="form--submit">Odošli</button>
             </form>
+        </div>
+
+        {userList.map((val) => {
+            return (
+                <div className="oneUser">
+                    <h1>{val.menoPriezvisko}</h1>
+                    <p>{val.hodnotenie}</p>
+
+                    <button /*onClick={() => {deleteUser(val.nick)}}*/>Delete</button>
+                    <input type="text" id="updateInput" /*onChange={(e) => {setUpdateUserEmail(e.target.value)}}*//>
+                    <button /*onClick={() => {updateUser(val.nick)}}</div>*/>Update</button>
+                </div>
+            )
+        })}
         </div>
     )
     
