@@ -414,40 +414,133 @@ input[type="radio"] {
     width: 50%;
 }
 
+/* Responzivita */
 
-/* CRUD test */
-/*
-.dot {
-    text-align: center;
-}
+@media only screen and (max-width: 1200px) {
+    :root {
+        --heights: 0vh;
+        --widths: 0%;
 
-.form  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+      }
 
-.form input{
-    width: 300px;
-    height: 60px;
-    margin: 10px;
-    font-size: 25px;
-}
+      .slider-container {
+        height: var(--heights);
+        width: var(--widths);
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+      }
 
-.oneUser {
-    text-align: center;
-    width: 300px;
-    height: 110px;
-    border: 2px solid black;
-    border-radius: 15px;
-    margin: 10px;
-}
+      .full--sluzby, .full--vzdelavanie, .full--clanky, .HomeContent {
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 50px;
+        animation-name: contentOpacity;
+        animation-duration: 1s;
+        min-height: 100vh;
+    }
+    
+    .HomeContent{
+        margin-top: 30px;
+    }
+    
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .boxImg--right {
+        object-fit: contain;
+        width: 500px;
+    }
+    
+    .boxImg--left {
+        object-fit: contain;
+        width: 500px;
+    }
+    
+    .boxText {
+        text-align: justify;
+    }
+    
+    .boxText > p{
+        text-indent: 20px;
+    }
+                    
+    .uvod {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .uvod--nadpis {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        color: #003366;
+        font-size: 25px;
+    }
+    
+    .uvod--text {
+        font-weight: bold;
+        text-align: justify;
+        padding-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .horizontalLine {
+        height: 3px;
+        color: #003366;
+        background-color: #003366;
+        width: 100%;
+    }
+    
+    .hr--podNadpisom {
+        height: 7px;
+        color: #c06;
+        background-color: #c06;
+        width: 20%;
+        margin-bottom: 10px;
+    }
 
-#updateInput {
-    width: 100px;
-    height: 30px;
-}
+    /* navbar */
 
-*/
+    .full--navbar{ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #00b7e5;
+        height: 400px;
+    }
+    
+    .nav--logo{
+        max-width: 70px;
+    }
+    
+    .ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ul > li{
+        /*list-style: none;*/
+        padding: 10px;
+    }
+    
+    .ul > li >a{
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+        font-size: 30px;
+    }
+    
+    .ul > li >a:hover{
+        color: #003366;
+    }
+
+
+
+
+  }
+
 
