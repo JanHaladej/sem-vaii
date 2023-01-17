@@ -76,6 +76,10 @@ app.post("/api/insert/reg", (req, res)=> {
 
     var variable
     // je tam uz niekto s takym nickom ?
+    if (!/^\d+$/.test(MA)) {
+        alert('MAcislo must contain only numbers');
+        return;
+    }
         const sqlInsert = "INSERT INTO user_list (MA, email, heslo, pozicia) VALUES (?,?,?,?)"
         db.query(sqlInsert, [MA, email, heslo, pozicia], (err, result)=> {
         if (err) {

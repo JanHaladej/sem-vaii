@@ -1,5 +1,6 @@
 import React from "react"
 import Axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
     const [formDataLogin, setFormDataLogin] = React.useState({
@@ -18,6 +19,7 @@ export default function Login(){
 
     const [userList, setUserList] = React.useState ([])
     const bcrypt = require('bcryptjs');
+    const navigate = useNavigate();
     
     function handleSubmit(event) {
         event.preventDefault()
@@ -30,6 +32,7 @@ export default function Login(){
 
         if(userList.length !== 0){
             console.log("prihlaseny")
+            navigate("/Prihlaseny")
         } else {
             alert('Neprihlaseny!');
         }

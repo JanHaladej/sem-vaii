@@ -10,6 +10,7 @@ import Dotaznik from "./pages/Dotaznik"
 import Referencie from "./pages/Referencie"
 import Clanky from "./pages/Clanky"
 import Kariera from "./pages/Kariera"
+import Prihlaseny from "./pages/Prihlaseny"
 
 import "./style.css"
 
@@ -26,6 +27,7 @@ export default function App() {
                 <Route path='/Referencie' element={<Referencie/>} />
                 <Route path='/Clanky' element={<Clanky/>} />
                 <Route path='/Kariera' element={<Kariera/>} />
+                <Route path='/Prihlaseny' element={<Prihlaseny/>} />
             </Routes>
         </Router>
         <Footer/>
