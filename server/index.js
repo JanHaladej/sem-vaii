@@ -34,6 +34,15 @@ app.get("/api/get/cla", (req, res) => {
 
 })
 
+app.get("/api/get/dot", (req, res) => {
+    const sqlSelect = "SELECT * FROM dotaznik"
+
+    db.query(sqlSelect, (err, result)=> {
+        res.send(result)
+    })
+
+})
+
 //zapisovanie do databazy user_list
 app.post("/api/insert/reg", (req, res)=> {
 

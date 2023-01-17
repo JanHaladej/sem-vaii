@@ -20,7 +20,17 @@ export default function Form() {
             telCislo: ""
         }
     )
-    
+
+    const [userList, setUserList] = React.useState ([])
+    var count = 0;
+
+    React.useEffect(() => {
+        Axios.get("http://localhost:3001/api/get/dot").then((response) => {
+            setUserList(response.data)
+        })
+    }, [userList])
+
+
     function handleChange(event) {
         console.log(event)
         const {name, value, type, checked} = event.target
@@ -431,6 +441,20 @@ export default function Form() {
             </div>
 
             <button className="dotaznik--submit">Odošli</button>
+
+            <div className="counter">
+            {/*var variable = JSON.parse(JSON.stringify(userList))*/}
+
+            {userList.map((val) => {
+            return (
+                <div className="one-result">
+                <div className="form--base">
+                    <h2>{val.meno} už dokončil dotazník</h2>
+                </div>
+                </div>
+            )
+        })}
+            </div>
 
         </form>
     )

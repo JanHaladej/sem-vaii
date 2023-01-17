@@ -14,6 +14,7 @@ export default function Home(){
                 <div className="box">
                     <div className="boxText">
                         <h1>Finančná gramotnosť</h1>
+                        <hr className="hr--podNadpisom" />
                         <p>V poslednej dobe často používané slovné spojenie, avšak stále málo rozvinutá oblasť z pohľadu vedomostí obyvateľstva a aplikácie v bežnom živote.</p>
                         <p>Príklad z praxe:</p>
                         <p>Na začiatku si klienti myslia, že mojou prácou je chodiť po bankách s požiadavkou najnižšej úrokovej sadzby na hypotéku. Tento parameter však nie je zďaleka najdôležitejší, ak chceme mať správne nastavené financovanie. Čo tak pozrieť sa na to, koľko v skutočnosti banke vrátim? Napr. pri hypotéke vo výške 100.000 Eur, ak by som bral do úvahy priemernú úrokovú sadzbu 1,5% (čo sa v praxi nedá presne stanoviť na celú dobu splácania), vrátim cca 124.000 Eur. To je o 24.000 Eur viac, ako som si požičal. Namiesto toho, aby sme sa predbiehali s lepšou úrokovou sadzbou o desatinu-dve, poďme riešiť, ako znížiť preplatenosť z 24.000 Eur až na 0 (nula) Eur.</p>
