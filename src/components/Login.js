@@ -26,6 +26,8 @@ export default function Login(){
             setUserList(response.data)
         })
 
+        console.log(userList)
+
         if(userList.length !== 0){
             console.log("prihlaseny")
         } else {

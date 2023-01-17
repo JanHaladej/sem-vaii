@@ -14,6 +14,7 @@ const db = mysql.createPool({
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
+const bcrypt = require('bcryptjs');
 
 //zobraz celu databazu
 app.get("/api/get/ref", (req, res) => {
@@ -48,9 +49,19 @@ app.get("/api/get/login", (req, res) => {
     const MA = req.query.MA
     const heslo = req.query.heslo
 
-    const sqlSelect = "SELECT * FROM user_list WHERE MA = ? AND heslo = ?"
-    db.query(sqlSelect, [MA, heslo], (err, result)=> {
-        res.send(result)
+    const sqlSelect = "SELECT * FROM user_list WHERE MA = ?"
+    db.query(sqlSelect, MA, (err, result)=> {
+        if(result){
+            bcrypt.compare(heslo, result[0].heslo, function(err, resulting) {
+                if (resulting === true) {
+                    res.send("platne")
+                } else {
+                    res.send("")
+                }
+            });
+        } else {
+            res.send("")
+        }
     })
 
 })
