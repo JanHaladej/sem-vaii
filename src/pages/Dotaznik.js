@@ -22,7 +22,6 @@ export default function Form() {
     )
 
     const [userList, setUserList] = React.useState ([])
-    var count = 0;
 
     React.useEffect(() => {
         Axios.get("http://localhost:3001/api/get/dot").then((response) => {

@@ -1,11 +1,26 @@
 import React from "react"
+import Axios from "axios"
 
 import Slider from "../components/Slider"
 
 import img1 from "../images/HomeImgs/Home1.jpg"
-import img2 from "../images/HomeImgs/Home2.jpg"
+/*import img2 from "../images/HomeImgs/Home2.jpg"*/
+
+
 
 export default function Home(){
+
+    const [updateHodn, setUpdateHodn] = React.useState("")
+
+    React.useEffect(() => {
+        Axios.get("https://random.imagecdn.app/v1/image?width=500&height=150&category=buildings&format=json").then((response) => {
+            setUpdateHodn(response.data.url)
+        })
+    }, [])
+
+
+
+
     return (
         <div>
             <Slider/> {/*https://github.com/IamDyroz/carousel*/}
@@ -23,7 +38,7 @@ export default function Home(){
                     <img src={img1} alt="" className="boxImg--right"/>
                 </div>
                 <div className="box">
-                    <img src={img2} alt="" className="boxImg--left"/>
+                    <img src={updateHodn} alt="" className="boxImg--left"/>
                     <div className="boxText">
                         <p>Takýchto "málo komunikovaných" oblastí je viacero. Viete si napríklad vypočítať a pripraviť požadovanú Rentu? Pritom je to aj v možnostiach pracujúceho človeka s priemernou mzdou v hospodárstve, len o tom často ani nevedia.</p>
                         <p>Každý z nás má jedného lekára, tak prečo nemať aj svojho človeka na finančnom trhu, všetko pod jednou strechou? Nájdite si čas a spoločne sa pozrime na Vaše priania a potreby, a aj na základe Vašich možností Vám vypracujem Váš individuálny finančný plán.</p>

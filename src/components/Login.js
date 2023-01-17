@@ -1,4 +1,5 @@
 import React from "react"
+import Axios from "axios"
 
 export default function Login(){
     const [formDataLogin, setFormDataLogin] = React.useState({
@@ -14,11 +15,23 @@ export default function Login(){
             }
         })
     }
+
+    const [userList, setUserList] = React.useState ([])
     
     function handleSubmit(event) {
         event.preventDefault()
         /*sem podmienky ak nejake budem mat napr @ */
-        console.log("prihlaseny")
+        Axios.get("http://localhost:3001/api/get/login?MA="+ event.target.MAcislo.value + "&heslo=" + event.target.password.value).then((response) => {
+            setUserList(response.data)
+        })
+
+        if(userList.length !== 0){
+            console.log("prihlaseny")
+        } else {
+            alert('Neprihlaseny!');
+        }
+
+
     }
     
     return (

@@ -43,6 +43,18 @@ app.get("/api/get/dot", (req, res) => {
 
 })
 
+app.get("/api/get/login", (req, res) => {
+
+    const MA = req.query.MA
+    const heslo = req.query.heslo
+
+    const sqlSelect = "SELECT * FROM user_list WHERE MA = ? AND heslo = ?"
+    db.query(sqlSelect, [MA, heslo], (err, result)=> {
+        res.send(result)
+    })
+
+})
+
 //zapisovanie do databazy user_list
 app.post("/api/insert/reg", (req, res)=> {
 
