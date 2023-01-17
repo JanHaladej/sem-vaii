@@ -76,18 +76,12 @@ app.post("/api/insert/reg", (req, res)=> {
 
     var variable
     // je tam uz niekto s takym nickom ?
-    const sqlTest = "SELECT COUNT(MA) FROM user_list WHERE MA = ?"
-    db.query(sqlTest, MA, (error, resulting)=> {
-        /*console.log(resulting)*/
-        /*variable = JSON.parse(JSON.stringify(resulting));*/
-        /*if(variable[0]['COUNT(MA)'] === 0){*/
-            const sqlInsert = "INSERT INTO user_list (MA, email, heslo, pozicia) VALUES (?,?,?,?)"
-            db.query(sqlInsert, [MA, email, heslo, pozicia], (err, result)=> {
-            console.log(result)
-            })
-        /*}*/
-    })
-
+        const sqlInsert = "INSERT INTO user_list (MA, email, heslo, pozicia) VALUES (?,?,?,?)"
+        db.query(sqlInsert, [MA, email, heslo, pozicia], (err, result)=> {
+        if (err) {
+            res.send("nok")
+        }
+        })
 })
 
 //zapisovanie do databazy referencie

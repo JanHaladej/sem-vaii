@@ -44,6 +44,11 @@ export default function Register(){
             formDataReg.password = hash;
             formDataReg.passwordConfirm = hash;
             Axios.post("http://localhost:3001/api/insert/reg", {formDataReg})
+            .then(result => {
+                    console.log(result.data)
+                    if (result.data === "nok") {alert("Not created");}
+                }
+            )
             });
           });
 
