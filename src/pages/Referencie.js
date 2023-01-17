@@ -14,7 +14,7 @@ export default function Referencie(){
             setUserList(response.data)
             console.log(response.data)
         })
-    }, [])
+    }, [userList])
     
     function handleChange(event) {
         setFormDataRef(prevFormDataRef => {
@@ -33,7 +33,7 @@ export default function Referencie(){
     }
     
     return (
-        <div>
+        
         <div className="form-container--referencia">
             <form className="form--base" onSubmit={handleSubmit}>
                 <h3>Hodnotenie a skúsenosť</h3>
@@ -53,7 +53,7 @@ export default function Referencie(){
                 />
                 <button className="form--submit">Odošli</button>
             </form>
-        </div>
+        
 
         {userList.map((val) => {
             return (
