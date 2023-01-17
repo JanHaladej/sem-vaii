@@ -18,18 +18,37 @@ export default function Register(){
             }
         })
     }
+
+    const bcrypt = require('bcryptjs');
+    const saltRounds = 10;
     
     function handleSubmit(event) {
         event.preventDefault()
         /*sem podmienky ak nejake budem mat napr @ */
-        /*
-        console.log(formDataReg.MAcislo)
-        console.log(formDataReg.password)
-        console.log(formDataReg.email)
-        console.log(formDataReg.passwordConfirm)
-        console.log(formDataReg.position)*/
 
-        Axios.post("http://localhost:3001/api/insert/reg", {formDataReg})
+        if (!/^\d+$/.test(event.target.MAcislo.value)) {
+            alert('MAcislo must contain only numbers');
+            return;
+        }
+        if (event.target.position.value.length > 5) {
+            alert('position must be exactly 4 characters long or less');
+            return;
+        }
+        if (event.target.password.value !== event.target.passwordConfirm.value) {
+            alert('passwords do not match');
+            return;
+        }
+
+        bcrypt.genSalt(saltRounds, function(err, salt) {
+            bcrypt.hash(formDataReg.password, salt, function(err, hash) {
+            formDataReg.password = hash;
+            formDataReg.passwordConfirm = hash;
+            Axios.post("http://localhost:3001/api/insert/reg", {formDataReg})
+            });
+          });
+
+
+
     }
     
     return (

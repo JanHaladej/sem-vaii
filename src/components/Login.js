@@ -17,6 +17,7 @@ export default function Login(){
     }
 
     const [userList, setUserList] = React.useState ([])
+    const bcrypt = require('bcryptjs');
     
     function handleSubmit(event) {
         event.preventDefault()
